@@ -37,3 +37,11 @@ const internSchema = new mongoose.Schema({
     }
 }, { timestamps: true })
 module.exports = mongoose.model('Intern', internSchema)
+
+
+// {
+// "name": "Mukesh Khan",
+// "email": "mukesh@gmail.com",
+// "mobile": 9876543210 ,
+// "collegeId": ""
+// }

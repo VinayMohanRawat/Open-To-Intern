@@ -27,3 +27,10 @@ const collegeSchema = new mongoose.Schema({
 }, { timestamps: true });
 
 module.exports = mongoose.model("College", collegeSchema)
+
+
+// {
+// "name": iim, 
+// "fullName" : "Indian Institutes of Management", 
+// "logoLink" : "https://functionup.s3.ap-south-1.amazonaws.com/colleges/svnit.jpg"
+// }
