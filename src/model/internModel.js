@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 const validator = require('validator');
-
+const ObjectId = mongoose.Schema.Types.ObjectId
 
 const internSchema = new mongoose.Schema({
     name: {
@@ -14,25 +14,24 @@ const internSchema = new mongoose.Schema({
         lowercase: true,
         unique: true,
         required: 'Email address is required',
-        validate:{
+        validate: {
             validator: validator.isEmail,
             message: '{VALUE} is not a valid email',
             isAsync: false
-          }
+        }
     },
-    mobile: {
+    mobile: { 
         type: Number,
-        required: true,
-        unique: true,
-        minLength:[10, "length is shorter than the minimum allowed length (10)."],
-        maxLength:[10, "length is greater than the maximum allowed length (10)."]
+       validate : {
+                validator : function(mobile) {
+                return /^[6-9]\d{9}$/.test(mobile) },
+                message : 'Please fill a valid mobile number',
+                isAsync: false
+                    }
+                },
 
-        
-
-        
-    },
     collegeId: {
-        type: mongoose.Schema.Types.ObjectId,
+        type: ObjectId,
         ref: 'College',
         required: true
     },
@@ -40,7 +39,10 @@ const internSchema = new mongoose.Schema({
         type: Boolean,
         default: false
     }
-}, { timestamps: true })
+
+}, { timestamps: true });
+
+
 module.exports = mongoose.model('Intern', internSchema)
 
 

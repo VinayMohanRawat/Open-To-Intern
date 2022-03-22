@@ -3,7 +3,7 @@ const mongoose = require("mongoose")
 const collegeSchema = new mongoose.Schema({
      name: { 
          type : String,
-         require : true,
+         require : true ,
          unique : true,
          trim : true,
          lowercase : true

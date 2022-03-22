@@ -24,7 +24,7 @@ const createCollage = async function (req, res) {
     }
 
     if (!(/(ftp|http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-/]))?/.test(data.logoLink))) {
-      return res.status(400).send({ status: false, message: "Logo link will be valid link " })
+      return res.status(400).send({ status: false, message: "Logo link must be valid link " })
     }
 
     let collageData = await collageModel.create(data)

@@ -11,7 +11,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 const mongoose = require('mongoose')
 
-mongoose.connect("mongodb+srv://groupXDatabase:DrGlqGI9nfo7DKJs@cluster0.3tu2j.mongodb.net/groupXDatabase1?retryWrites=true&w=majority", {useNewUrlParser: true,useUnifiedTopology: true,  useCreateIndex: true}
+mongoose.connect("mongodb+srv://groupXDatabase:DrGlqGI9nfo7DKJs@cluster0.3tu2j.mongodb.net/groupXDatabase1?retryWrites=true&w=majority", 
+{useNewUrlParser: true,useUnifiedTopology: true,  useCreateIndex: true}
 )
     .then(() => console.log('mongodb running on 3000....'))
     .catch(err => console.log(err))
